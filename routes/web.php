@@ -18,4 +18,10 @@ Route::get('/', function () {
     return view('welcome');
 })->name('home');
 
-Route::resource('users', UserController::class);
+Route::resource('users', UserController::class)->middleware(['auth', 'verified']);
+
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth', 'verified'])->name('dashboard');
+
+require __DIR__.'/auth.php';
