@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use Telegram\Bot\Laravel\Facades\Telegram;
+
 
 class UserController extends Controller
 {
@@ -19,7 +21,15 @@ class UserController extends Controller
             User::factory()->count(50)->create();
         }
         $users = User::orderBy('id','desc')->paginate(15);
-        return view('user.index',compact('users'));
+
+        $response = Telegram::getMe();
+        $botId = $response->getId();
+        $firstName = $response->getFirstName();
+        $username = $response->getUsername();
+        $bot =  $botId . '<br />' . $firstName . '<br />' . $username;
+
+        dd($response);
+        return view('user.index',compact('users','bot'));
     }
 
     /**
