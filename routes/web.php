@@ -31,11 +31,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
 });
 Route::post('/5625426628:AAFZmG2FZdRoNtjiYcvS2sSYwgjnauNXtkI/webhook', function () {
     $update = Telegram::commandsHandler(true);
-
-    // Commands handler method returns an Update object.
-    // So you can further process $update object
-    // to however you want.
-
     return 'ok';
 });
+
 require __DIR__.'/auth.php';
