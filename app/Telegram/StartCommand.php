@@ -44,6 +44,5 @@ class StartCommand extends Command
 
         // Reply with the commands list
         $this->replyWithMessage(['text' => $response]);
-        $this->replyWithSticker(['sticker' => "https://github.com/TelegramBots/book/raw/master/src/docs/sticker-fred.webp"]);
     }
 }
