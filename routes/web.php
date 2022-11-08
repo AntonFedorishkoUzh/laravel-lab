@@ -25,10 +25,9 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
-
     Route::resource('users', UserController::class);
-
 });
+
 Route::post('/5625426628:AAFZmG2FZdRoNtjiYcvS2sSYwgjnauNXtkI/webhook', function () {
     $update = Telegram::commandsHandler(true);
     return 'ok';
