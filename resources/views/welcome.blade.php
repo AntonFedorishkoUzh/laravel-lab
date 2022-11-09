@@ -9,7 +9,13 @@
             </svg>
         </div>
         @foreach( \App\Models\ChatParticipant::all() as $user)
-            <p>{{$user->bot_chat_id}}</p>
+            <p>{{$user}}</p>
+            <hr>
+        @endforeach
+        <div>#####################</div>
+        @foreach( \App\Models\Chat::all() as $user)
+            <p>{{$user->name}}</p>
+            <hr>
         @endforeach
         <div class="mt-8 bg-white dark:bg-gray-800 overflow-hidden shadow sm:rounded-lg">
             <div class="grid grid-cols-1 md:grid-cols-2">
