@@ -34,7 +34,7 @@ class RCRegisterCommand extends Command
         $participant->first_name    = $bot_chat->firstName;
         $participant->last_name     = $bot_chat->lastName;
         $participant->username      = $bot_chat->username;
-        $participant->chat_id       = $bot_chat->id;
+        $participant->chat_id       = $chat->id;
 
         try{
             $participant->save();
