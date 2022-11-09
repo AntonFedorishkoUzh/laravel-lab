@@ -112,7 +112,10 @@ return [
     */
     'commands'                     => [
         Telegram\Bot\Commands\HelpCommand::class,
-        App\Telegram\StartCommand::class
+        App\Telegram\StartCommand::class,
+        App\Telegram\RCGenerateCommand::class,
+        App\Telegram\RCRegisterCommand::class,
+        App\Telegram\RCStopCommand::class
     ],
 
     /*
