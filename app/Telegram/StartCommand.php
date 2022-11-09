@@ -23,8 +23,9 @@ class StartCommand extends Command
     public function handle()
     {
         $c = $this->getArguments();
-        $f = $this->getUpdate();
+        $f = $this->getUpdate()->getChat();
 
+        $this->replyWithMessage(['text' => json_encode([$f->username,$f->id])]);
 
 
         // This will send a message using `sendMessage` method behind the scenes to
