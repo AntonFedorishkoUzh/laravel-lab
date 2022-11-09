@@ -22,17 +22,5 @@ class RCRegisterCommand extends Command
      */
     public function handle()
     {
-        $replyMarkup = array(
-            'keyboard' => array(
-                array("A", "B")
-            )
-        );
-        $encodedMarkup = json_encode($replyMarkup);
-        $text = array(
-                'reply_markup' => $encodedMarkup,
-                'text' => "Test"
-        );
-        $this->replyWithMessage(compact('text'));
-
     }
 }
