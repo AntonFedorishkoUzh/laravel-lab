@@ -22,14 +22,14 @@ class UserController extends Controller
         }
         $users = User::orderBy('id','desc')->paginate(15);
 
-        $response = Telegram::getMe();
-        $botId = $response->getId();
-        $firstName = $response->getFirstName();
-        $username = $response->getUsername();
-        $bot =  $botId . '<br />' . $firstName . '<br />' . $username;
-
-        dd($response);
-        return view('user.index',compact('users','bot'));
+//        $response = Telegram::getMe();
+//        $botId = $response->getId();
+//        $firstName = $response->getFirstName();
+//        $username = $response->getUsername();
+//        $bot =  $botId . '<br />' . $firstName . '<br />' . $username;
+//
+//        dd($response);
+        return view('user.index',compact('users'));
     }
 
     /**
