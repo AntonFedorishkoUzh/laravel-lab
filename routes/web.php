@@ -29,7 +29,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
 });
 
 Route::post('/5625426628:AAFZmG2FZdRoNtjiYcvS2sSYwgjnauNXtkI/webhook', function () {
-//    $update = Telegram::commandsHandler(true);
+    $update = Telegram::commandsHandler(true);
     return 'ok';
 });
 
