@@ -16,8 +16,8 @@ return new class extends Migration
         Schema::create('chat_participants', function (Blueprint $table) {
             $table->id();
             $table->bigInteger('bot_chat_id');
-            $table->string('first_name',30);
-            $table->string('last_name',30);
+            $table->string('first_name',30)->nullable();
+            $table->string('last_name',30)->nullable();
             $table->string('username',30)->unique();
             $table->foreignId('chat_id')->constrained()->onDelete('cascade');;
             $table->timestamps();
